@@ -17,7 +17,8 @@ describe Airport do
 
   it 'able to confirm plane no longer in the airtport' do 
     plane = Plane.new
-    airport = Airport.new
-    expect(airport.has_plane?(plane)).to eq false
+    subject.land_plane(plane)
+    plane = subject.takeoff_plane
+    expect(subject.hangar).not_to include plane
   end 
 end

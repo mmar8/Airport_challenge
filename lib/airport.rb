@@ -1,16 +1,16 @@
-require 'plane'
+ require_relative 'plane'
 
 class Airport
+ attr_reader :hangar 
+
   def land_plane(plane)
-    @airport = []
-    @airport.push(plane)
+    @hangar = []
+    @hangar.push(plane)
 
   end 
 
   def takeoff_plane
+    @hangar.pop
   end
 
-  def has_plane?(plane)
-    false 
-  end
 end
