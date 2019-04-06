@@ -1,9 +1,14 @@
 require './lib/airport'
+require './lib/plane'
 
 describe Airport do
   it 'can land a plane' do
-    # plane = Plane.new
     expect(subject).to respond_to(:land_plane)
+  end
+
+  it 'can confirm plane is in the airport' do
+    plane = Plane.new
+    expect(subject.land_plane(plane)).to eq [plane]
   end
 
   it 'plane can take off' do

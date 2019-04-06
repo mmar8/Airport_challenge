@@ -1,7 +1,10 @@
 require 'plane'
 
 class Airport
-  def land_plane
+  def land_plane(plane)
+    @airport = []
+    @airport.push(plane)
+
   end 
 
   def takeoff_plane
