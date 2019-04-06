@@ -18,6 +18,7 @@ describe Airport do
   it 'able to confirm plane no longer in the airtport' do 
     plane = Plane.new
     subject.land_plane(plane)
+    allow(subject).to receive(:is_stormy?).and_return false
     plane = subject.takeoff_plane
     expect(subject.hangar).not_to include plane
   end 

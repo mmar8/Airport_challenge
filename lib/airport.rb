@@ -24,6 +24,7 @@ class Airport
   end
 
   def is_stormy?
+    [true,false,true,false,false,false].sample
   end
 
 end
