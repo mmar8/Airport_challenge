@@ -21,4 +21,10 @@ describe Airport do
     plane = subject.takeoff_plane
     expect(subject.hangar).not_to include plane
   end 
+
+  it 'has a default capacity of 10' do 
+    airport = Airport.new(10)
+    expect(subject.capacity).to eq 10
+  end
+
 end
