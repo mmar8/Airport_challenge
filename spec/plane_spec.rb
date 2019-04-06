@@ -1,4 +1,4 @@
-require 'plane'
+require './lib/plane'
 
-describe Plane do
-end
+describe Plane do 
+end 
