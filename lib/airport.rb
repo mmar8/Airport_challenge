@@ -8,22 +8,22 @@ class Airport
     @capacity = capacity
   end
 
-  def land_plane(plane)
+  def land(plane)
     fail 'Airport Full!' if airport_full?
     @hangar << plane
+
   end 
 
-  def takeoff_plane
-    @hangar.pop
-    raise "Weather is stormy!No take off" if is_stormy?
-
+  def takeoff(plane)
+    @hangar.delete(plane)
+    raise "Weather is stormy!No take off" if stormy? == true
   end
 
   def airport_full?
     @hangar.count >= DEFAULT_CAPACITY
   end
 
-  def is_stormy?
+  def stormy?
     [true,false,true,false,false,false].sample
   end
 
